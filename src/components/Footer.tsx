@@ -1,4 +1,4 @@
-import { Music2 } from "lucide-react";
+import logoMark from "@/assets/gigsync-mark.png";
 
 const Footer = () => {
   return (
@@ -6,9 +6,7 @@ const Footer = () => {
       <div className="container py-12 grid gap-8 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 mb-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary">
-              <Music2 className="h-4 w-4 text-primary-foreground" />
-            </div>
+            <img src={logoMark} alt="GigSync logo" width={36} height={36} loading="lazy" className="h-9 w-9" />
             <span className="font-display text-xl font-semibold">GigSync</span>
           </div>
           <p className="text-muted-foreground max-w-sm">

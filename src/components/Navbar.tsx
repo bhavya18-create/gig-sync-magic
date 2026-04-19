@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Music2 } from "lucide-react";
+import logoMark from "@/assets/gigsync-mark.png";
+
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -11,9 +12,13 @@ const Navbar = () => {
       <div className="absolute inset-0 bg-background/70 backdrop-blur-xl border-b border-border/50" />
       <div className="container relative flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary shadow-glow transition-transform group-hover:scale-110">
-            <Music2 className="h-4 w-4 text-primary-foreground" />
-          </div>
+          <img
+            src={logoMark}
+            alt="GigSync logo"
+            width={36}
+            height={36}
+            className="h-9 w-9 transition-transform group-hover:scale-110 drop-shadow-[0_0_18px_hsl(var(--primary)/0.5)]"
+          />
           <span className="font-display text-xl font-semibold tracking-tight">GigSync</span>
         </Link>
 

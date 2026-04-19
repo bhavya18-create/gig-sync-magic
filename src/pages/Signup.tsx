@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Music2, Mic2, CalendarCheck } from "lucide-react";
+import { Mic2, CalendarCheck } from "lucide-react";
+import logoMark from "@/assets/gigsync-mark.png";
 import { setUser, type Role } from "@/lib/auth";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
@@ -52,9 +53,7 @@ const Signup = () => {
     <div className="min-h-screen bg-hero">
       <div className="container py-10">
         <Link to="/" className="inline-flex items-center gap-2 mb-10">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary shadow-glow">
-            <Music2 className="h-4 w-4 text-primary-foreground" />
-          </div>
+          <img src={logoMark} alt="GigSync logo" width={36} height={36} className="h-9 w-9" />
           <span className="font-display text-xl font-semibold">GigSync</span>
         </Link>
 

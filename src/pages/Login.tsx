@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Music2 } from "lucide-react";
+import logoMark from "@/assets/gigsync-mark.png";
 import { setUser } from "@/lib/auth";
 import { toast } from "sonner";
 
@@ -34,9 +34,7 @@ const Login = () => {
       <div className="hidden lg:flex flex-col justify-between p-12 relative overflow-hidden border-r border-border/50">
         <div className="absolute inset-0 grid-pattern opacity-50" />
         <Link to="/" className="relative flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary shadow-glow">
-            <Music2 className="h-4 w-4 text-primary-foreground" />
-          </div>
+          <img src={logoMark} alt="GigSync logo" width={36} height={36} className="h-9 w-9" />
           <span className="font-display text-xl font-semibold">GigSync</span>
         </Link>
         <div className="relative">
@@ -55,9 +53,7 @@ const Login = () => {
       <div className="flex items-center justify-center p-6 md:p-12">
         <div className="w-full max-w-md">
           <Link to="/" className="lg:hidden flex items-center gap-2 mb-8">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary">
-              <Music2 className="h-4 w-4 text-primary-foreground" />
-            </div>
+            <img src={logoMark} alt="GigSync logo" width={36} height={36} className="h-9 w-9" />
             <span className="font-display text-xl font-semibold">GigSync</span>
           </Link>
 
