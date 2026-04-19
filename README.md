@@ -94,28 +94,7 @@ While tools were used to accelerate development, I:
 
 📷 Demo (Optional)
 <img width="1920" height="1080" alt="Screenshot 2026-04-19 094031" src="https://github.com/user-attachments/assets/9ddbfcc4-38fd-42e9-9da5-398beb6cccb1" />
-
-
-
-
 <img width="1920" height="1075" alt="Screenshot 2026-04-19 213609" src="https://github.com/user-attachments/assets/8966d1f7-29e8-4143-a823-a6a93c81b1fb" />
-
-
-
-
-<img width="1920" height="1075" alt="Screenshot 2026-04-19 213620" src="https://github.com/user-attachments/assets/0199cf1e-1212-43ff-a65f-eba71dacdd77" /> 
-
-
-
-<img width="1920" height="1080" alt="Screenshot 2026-04-19 213638" src="https://github.com/user-attachments/assets/ac180a93-0534-4183-b13d-402d96398756" /> 
-
-
-
-<img width="1920" height="1080" alt="Screenshot 2026-04-19 213648" src="https://github.com/user-attachments/assets/fd184670-c98b-4dfa-9843-fd7350d1a285" />
-
-
-
-
 ---
 
 🤝 Final Note
