@@ -9,8 +9,11 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { mockGigs, type Gig } from "@/lib/mockData";
 import { clearUser, getUser, type User } from "@/lib/auth";
-import { Calendar, MapPin, DollarSign, Plus, LogOut, CheckCircle2, Music2, Inbox } from "lucide-react";
+import { Calendar, MapPin, DollarSign, Plus, LogOut, CheckCircle2, Music2, Inbox, Users } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
+
+type DbUser = { id: string; name: string; email: string; created_at: string };
 
 const Dashboard = () => {
   const navigate = useNavigate();
