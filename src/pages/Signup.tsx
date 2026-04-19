@@ -9,6 +9,7 @@ import logoMark from "@/assets/gigsync-mark.png";
 import { setUser, type Role } from "@/lib/auth";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
 
 const Signup = () => {
   const navigate = useNavigate();
