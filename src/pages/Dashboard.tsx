@@ -20,6 +20,8 @@ const Dashboard = () => {
   const [user, setU] = useState<User | null>(null);
   const [gigs, setGigs] = useState<Gig[]>(mockGigs);
   const [open, setOpen] = useState(false);
+  const [dbUsers, setDbUsers] = useState<DbUser[]>([]);
+  const [loadingUsers, setLoadingUsers] = useState(true);
 
   useEffect(() => {
     const u = getUser();
@@ -28,6 +30,16 @@ const Dashboard = () => {
       return;
     }
     setU(u);
+
+    supabase
+      .from("users")
+      .select("*")
+      .order("created_at", { ascending: false })
+      .then(({ data, error }) => {
+        if (error) toast.error("Failed to load users");
+        else setDbUsers(data ?? []);
+        setLoadingUsers(false);
+      });
   }, [navigate]);
 
   if (!user) return null;
