@@ -61,12 +61,12 @@ const Hero = () => {
             <div className="relative rounded-3xl overflow-hidden border border-border/50 shadow-card">
               <img
                 src={heroImage}
-                alt="Musician performing live on stage with purple lights"
-                width={1536}
-                height={1280}
+                alt="Live music booking visualization with floating musician profiles"
+                width={1344}
+                height={768}
                 className="w-full h-[520px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
 
               <div className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-4 animate-float">
                 <div className="flex items-center gap-3">
