@@ -101,6 +101,38 @@ const Dashboard = () => {
           />
         </div>
 
+        <section className="mb-10 rounded-3xl bg-gradient-card border border-border/60 p-6">
+          <div className="flex items-center gap-2 mb-5">
+            <div className="h-9 w-9 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow">
+              <Users className="h-4 w-4 text-primary-foreground" />
+            </div>
+            <div>
+              <h2 className="font-display text-xl font-semibold">Registered users</h2>
+              <p className="text-xs text-muted-foreground">Live from your database</p>
+            </div>
+            <span className="ml-auto text-sm text-muted-foreground">{dbUsers.length} total</span>
+          </div>
+          {loadingUsers ? (
+            <div className="text-sm text-muted-foreground">Loading…</div>
+          ) : dbUsers.length === 0 ? (
+            <div className="text-sm text-muted-foreground">No users yet. Be the first to sign up!</div>
+          ) : (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {dbUsers.map((u) => (
+                <div key={u.id} className="flex items-center gap-3 rounded-xl bg-secondary/60 px-3 py-2.5">
+                  <div className="h-9 w-9 rounded-full bg-gradient-primary flex items-center justify-center text-xs font-bold text-primary-foreground shrink-0">
+                    {u.name.split(" ").map((n) => n[0]).join("").slice(0, 2).toUpperCase()}
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-sm font-medium truncate">{u.name}</div>
+                    <div className="text-xs text-muted-foreground truncate">{u.email}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+
         <div className="grid lg:grid-cols-2 gap-5">
           {gigs.map((gig) => (
             <GigCard
