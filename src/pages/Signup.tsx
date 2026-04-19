@@ -9,6 +9,7 @@ import logoMark from "@/assets/gigsync-mark.png";
 import { setUser, type Role } from "@/lib/auth";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -28,12 +29,22 @@ const Signup = () => {
 
   const update = (k: string, v: string) => setForm((f) => ({ ...f, [k]: v }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.password || !form.location) {
       toast.error("Please complete all required fields");
       return;
     }
+
+    const { error } = await supabase
+      .from("users")
+      .insert({ name: form.name, email: form.email });
+
+    if (error) {
+      toast.error(error.message.includes("duplicate") ? "Email already registered" : error.message);
+      return;
+    }
+
     setUser({
       id: crypto.randomUUID(),
       name: form.name,
@@ -45,7 +56,7 @@ const Signup = () => {
       bio: form.bio,
       media: form.media,
     });
-    toast.success(`Welcome to GigSync, ${form.name.split(" ")[0]}!`);
+    toast.success(`Account created! Welcome to GigSync, ${form.name.split(" ")[0]}!`);
     navigate("/dashboard");
   };
 
